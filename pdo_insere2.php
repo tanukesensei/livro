@@ -2,7 +2,7 @@
 
   try {
     // Instancia objeto PDO, conectando no mySQL
-    $conn = new PDO('mysql:dbname=livro;user=root;password=senha5;host=localhost;port=8080');
+    $conn = new PDO('mysql:unix_socket=/tmp/mysql.sock;host=localhost;port=8080;dbname=livro','root','senha5');
 
     // Executa uma série de instruções SQL
     $conn->exec("INSERT INTO famosos (codigo, nome) VALUES (1, 'Érico Veríssimo')");
